@@ -1,85 +1,57 @@
+/**
+ * Afrixar brand tokens — aligned with `afrixar-interview/app/globals.css`
+ * Background #FAF7EE · Surface #FFFEFB · Foreground #020103 · Accent #EB9A4B
+ */
 const palette = {
-  neutral100: "#FFFFFF",
-  neutral200: "#F4F2F1",
-  neutral300: "#D7CEC9",
-  neutral400: "#B6ACA6",
-  neutral500: "#978F8A",
-  neutral600: "#564E4A",
-  neutral700: "#3C3836",
-  neutral800: "#191015",
-  neutral900: "#000000",
+  neutral100: "#FFFEFB",
+  neutral200: "#FAF7EE",
+  neutral300: "#F0E9DC",
+  neutral400: "#E8E1D4",
+  neutral500: "#C9C2B6",
+  neutral600: "#8A847A",
+  neutral700: "#6B6560",
+  neutral800: "#4A4540",
+  neutral900: "#020103",
 
-  primary100: "#F4E0D9",
-  primary200: "#E8C1B4",
-  primary300: "#DDA28E",
-  primary400: "#D28468",
-  primary500: "#C76542",
-  primary600: "#A54F31",
+  primary100: "#FCEBD9",
+  primary200: "#F5D4B8",
+  primary300: "#EB9A4B",
+  primary400: "#D4823A",
+  primary500: "#B56514",
+  primary600: "#8A4E10",
 
-  secondary100: "#DCDDE9",
-  secondary200: "#BCC0D6",
-  secondary300: "#9196B9",
-  secondary400: "#626894",
-  secondary500: "#41476E",
+  secondary100: "#EEF6F5",
+  secondary200: "#D5EBE8",
+  secondary300: "#9CC9C4",
+  secondary400: "#5FA89F",
+  secondary500: "#2F7D73",
 
-  accent100: "#FFEED4",
-  accent200: "#FFE1B2",
-  accent300: "#FDD495",
-  accent400: "#FBC878",
-  accent500: "#FFBB50",
+  accent100: "#FFF4E8",
+  accent200: "#FFE8CC",
+  accent300: "#FFD699",
+  accent400: "#FFC266",
+  accent500: "#EB9A4B",
 
-  angry100: "#F2D6CD",
+  angry100: "#FFE8E5",
   angry500: "#C03403",
 
-  overlay20: "rgba(25, 16, 21, 0.2)",
-  overlay50: "rgba(25, 16, 21, 0.5)",
+  success100: "#E8F6EE",
+  success500: "#1D7A4C",
+
+  overlay20: "rgba(2, 1, 3, 0.06)",
+  overlay50: "rgba(2, 1, 3, 0.12)",
 } as const
 
 export const colors = {
-  /**
-   * The palette is available to use, but prefer using the name.
-   * This is only included for rare, one-off cases. Try to use
-   * semantic names as much as possible.
-   */
   palette,
-  /**
-   * A helper for making something see-thru.
-   */
   transparent: "rgba(0, 0, 0, 0)",
-  /**
-   * The default text color in many components.
-   */
-  text: palette.neutral800,
-  /**
-   * Secondary text information.
-   */
-  textDim: palette.neutral600,
-  /**
-   * The default color of the screen background.
-   */
+  text: palette.neutral900,
+  textDim: palette.neutral800,
   background: palette.neutral200,
-  /**
-   * The default border color.
-   */
   border: palette.neutral400,
-  /**
-   * The main tinting color.
-   */
-  tint: palette.primary500,
-  /**
-   * The inactive tinting color.
-   */
-  tintInactive: palette.neutral300,
-  /**
-   * A subtle color used for lines.
-   */
+  tint: palette.primary300,
+  tintInactive: palette.neutral500,
   separator: palette.neutral300,
-  /**
-   * Error messages.
-   */
   error: palette.angry500,
-  /**
-   * Error Background.
-   */
   errorBackground: palette.angry100,
 } as const

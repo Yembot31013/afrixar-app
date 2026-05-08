@@ -19,12 +19,16 @@ if (__DEV__) {
 import "./utils/gestureHandler"
 
 import { useEffect, useState } from "react"
+import type { ViewStyle } from "react-native"
 import { useFonts } from "expo-font"
 import * as Linking from "expo-linking"
+import { GestureHandlerRootView } from "react-native-gesture-handler"
 import { KeyboardProvider } from "react-native-keyboard-controller"
 import { initialWindowMetrics, SafeAreaProvider } from "react-native-safe-area-context"
 
+import { AppModeProvider } from "./context/AppModeContext"
 import { AuthProvider } from "./context/AuthContext"
+import { PipelineProvider } from "./context/PipelineContext"
 import { initI18n } from "./i18n"
 import { AppNavigator } from "./navigators/AppNavigator"
 import { useNavigationPersistence } from "./navigators/navigationUtilities"
@@ -35,6 +39,8 @@ import * as storage from "./utils/storage"
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
+const $gestureRoot: ViewStyle = { flex: 1 }
+
 // Web linking configuration
 const prefix = Linking.createURL("/")
 const config = {
@@ -42,15 +48,17 @@ const config = {
     Login: {
       path: "",
     },
-    Welcome: "welcome",
-    Demo: {
+    MainTabs: {
       screens: {
-        DemoShowroom: {
-          path: "showroom/:queryIndex?/:itemIndex?",
+        Discover: "discover",
+        MyWork: "pipeline",
+        Chat: {
+          screens: {
+            ChatList: "chat",
+            ChatRoom: "chat/:conversationId",
+          },
         },
-        DemoDebug: "debug",
-        DemoPodcastList: "podcast",
-        DemoCommunity: "community",
+        Profile: "profile",
       },
     },
   },
@@ -94,18 +102,24 @@ export function App() {
 
   // otherwise, we're ready to render the app
   return (
-    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <KeyboardProvider>
-        <AuthProvider>
-          <ThemeProvider>
-            <AppNavigator
-              linking={linking}
-              initialState={initialNavigationState}
-              onStateChange={onNavigationStateChange}
-            />
-          </ThemeProvider>
-        </AuthProvider>
-      </KeyboardProvider>
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={$gestureRoot}>
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+        <KeyboardProvider>
+          <AuthProvider>
+            <ThemeProvider>
+              <AppModeProvider>
+                <PipelineProvider>
+                  <AppNavigator
+                    linking={linking}
+                    initialState={initialNavigationState}
+                    onStateChange={onNavigationStateChange}
+                  />
+                </PipelineProvider>
+              </AppModeProvider>
+            </ThemeProvider>
+          </AuthProvider>
+        </KeyboardProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   )
 }
