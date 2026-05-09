@@ -7,7 +7,8 @@
   "userInterfaceStyle": "automatic",
   "icon": "./assets/images/brand/adaptive-icon.png",
   "updates": {
-    "fallbackToCacheTimeout": 0
+    "fallbackToCacheTimeout": 0,
+    "url": "https://u.expo.dev/1a620cf1-0211-4a46-8ba5-ff45d6edbdab"
   },
   "assetBundlePatterns": [
     "**/*"
@@ -19,12 +20,29 @@
       "foregroundImage": "./assets/images/brand/adaptive-icon.png",
       "backgroundColor": "#ffffff"
     },
-    "allowBackup": false
+    "allowBackup": false,
+    "config": {
+      "googleMaps": {}
+    },
+    "permissions": [
+      "android.permission.ACCESS_COARSE_LOCATION",
+      "android.permission.ACCESS_FINE_LOCATION"
+    ]
   },
   "ios": {
     "icon": "./assets/images/brand/ios-icon.png",
     "supportsTablet": true,
-    "bundleIdentifier": "com.konnectapp"
+    "bundleIdentifier": "com.konnectapp",
+    "privacyManifests": {
+      "NSPrivacyAccessedAPITypes": [
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "CA92.1"
+          ]
+        }
+      ]
+    }
   },
   "web": {
     "favicon": "./assets/images/brand/adaptive-icon.png",
@@ -70,5 +88,8 @@
       "projectId": "1a620cf1-0211-4a46-8ba5-ff45d6edbdab"
     }
   },
-  "owner": "yembot"
+  "owner": "yembot",
+  "runtimeVersion": {
+    "policy": "appVersion"
+  }
 }
