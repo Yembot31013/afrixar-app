@@ -1514,7 +1514,7 @@
     resolve-from "^5.0.0"
     semver "^7.6.0"
 
-"@expo/image-utils@^0.8.14":
+"@expo/image-utils@^0.8.13", "@expo/image-utils@^0.8.14":
   version "0.8.14"
   resolved "https://registry.yarnpkg.com/@expo/image-utils/-/image-utils-0.8.14.tgz#1c4bf2e6787436ae14beb834b7c36133329de842"
   integrity sha512-5Sn+jG4Cw+shC2wDMXoqSAJnvERbiwzHn05FpWtD5IBflfTIs5gUmjzwiGVyjOdlMSQhgRrw/AymPbmO9h9mpQ==
@@ -2370,6 +2370,11 @@
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.8.tgz#958b91c991b1867ced318bedea0e215ee050726e"
   integrity sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==
+
+"@types/geojson@^7946.0.13":
+  version "7946.0.16"
+  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.16.tgz#8ebe53d69efada7044454e3305c19017d97ced2a"
+  integrity sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==
 
 "@types/graceful-fs@^4.1.3":
   version "4.1.9"
@@ -4426,6 +4431,11 @@ expo-font@~55.0.4, expo-font@~55.0.7:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-haptics@~55.0.14:
+  version "55.0.14"
+  resolved "https://registry.yarnpkg.com/expo-haptics/-/expo-haptics-55.0.14.tgz#9532ba088ee7eae561ad0ef5552c78f33161998a"
+  integrity sha512-KjDItBsA9mi1f5nRwf8g1wOdfEcLHwvEdt5Jl1sMCDETR/homcGOl+F3QIiPOl/PRlbGVieQsjTtF4DGtHOj6g==
+
 expo-json-utils@~55.0.2:
   version "55.0.2"
   resolved "https://registry.yarnpkg.com/expo-json-utils/-/expo-json-utils-55.0.2.tgz#ef79888b881ef5b92d27245d3a758bc5debcbccf"
@@ -4435,6 +4445,11 @@ expo-keep-awake@~55.0.8:
   version "55.0.8"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-55.0.8.tgz#007e9ab9508c6e9dc606be6ceb7bbd2036c7ac58"
   integrity sha512-PfIpMfM+STOBwkR5XOE+yVtER86c44MD+W8QD8JxuO0sT9pF7Y1SJYakWlpvX8xsGA+bjKLxftm9403s9kQhKA==
+
+expo-linear-gradient@~55.0.13:
+  version "55.0.13"
+  resolved "https://registry.yarnpkg.com/expo-linear-gradient/-/expo-linear-gradient-55.0.13.tgz#1a61751c1623dec6dd885bf7fe152b4c5f35fbb5"
+  integrity sha512-Qz2T4jpkA15RIk29DBqI1TwW+8O9AN8MyC4TJPbh/5UnihH0yNNz3waplUO8Szh5OZ3czTGvtPQU4ysF3RDxwQ==
 
 expo-linking@~55.0.7:
   version "55.0.15"
@@ -4450,6 +4465,13 @@ expo-localization@~55.0.8:
   integrity sha512-fXiEUUihIrXmAEzoneaTOFcQ7TKmr25RR/ymrB/MvYTVnmevFA1zY2KI0VSiXY+NKKjZ8mG65YSn1wh4gEYKxA==
   dependencies:
     rtl-detect "^1.0.2"
+
+expo-location@~55.1.9:
+  version "55.1.9"
+  resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-55.1.9.tgz#fa7d8179f7b46e7ed7a079384383e51ec9ab5f3a"
+  integrity sha512-PIH9/qeyhtGh190FyIJNZYHXZOoi42SbVHY9IoTMBmqWLHf1BJyGhPpFlaLBSCjxObqfVZmrWsN5dtjueSwYQA==
+  dependencies:
+    "@expo/image-utils" "^0.8.13"
 
 expo-manifests@~55.0.16:
   version "55.0.16"
@@ -4486,6 +4508,13 @@ expo-splash-screen@~55.0.10:
   integrity sha512-WI5T0dutiZhxsqlF+jhEP4JRpQNILLlP8IpmKehsnV53Cncv6AQrKE7y1sOWwDyC2m2GBufZ/Vwam1RMt2EfmA==
   dependencies:
     "@expo/prebuild-config" "^55.0.17"
+
+expo-status-bar@~55.0.6:
+  version "55.0.6"
+  resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-55.0.6.tgz#ae54f85e9aff081480f87e902c29ffc26343aa3f"
+  integrity sha512-ijOUptfdiqYt7rObZ6jrPQ8sE5YN/8MxKCIJx0b7TY4nGkSJxhPIxeoW4GXcXCA8mTQ9PiOHH/ThLZgRVZvUlQ==
+  dependencies:
+    react-native-is-edge-to-edge "^1.2.1"
 
 expo-system-ui@~55.0.9:
   version "55.0.17"
@@ -7203,6 +7232,13 @@ react-native-keyboard-controller@1.20.7:
   integrity sha512-G8S5jz1FufPrcL1vPtReATx+jJhT/j+sTqxMIb30b1z7cYEfMlkIzOCyaHgf6IMB2KA9uBmnA5M6ve2A9Ou4kw==
   dependencies:
     react-native-is-edge-to-edge "^1.2.1"
+
+react-native-maps@^1.27.2:
+  version "1.27.2"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-1.27.2.tgz#93cd5a79ea3d6f67b145797022beb149cffcc01a"
+  integrity sha512-VKr+xZ2RZGHHJlY6KhlafvGSmK0dq/tUu5uhfJ7K9rwN5pUdubdugzMKGDU/16lXmQSg7xbClKhRctj3Pm5F5g==
+  dependencies:
+    "@types/geojson" "^7946.0.13"
 
 react-native-mmkv@3.3.3:
   version "3.3.3"
