@@ -24,6 +24,8 @@ import { useAppTheme } from "@/theme/context"
 import { MainTabNavigator } from "./MainTabNavigator"
 import type { AppStackParamList, NavigationProps } from "./navigationTypes"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
+import { GetStartedScreen } from "@/screens/GetStartedScreen"
+import { SignUpScreen } from "@/screens/SignUpScreen"
 
 /**
  * This is a list of all the route names that will exit the app if the back button
@@ -50,7 +52,7 @@ const AppStack = () => {
           backgroundColor: colors.background,
         },
       }}
-      initialRouteName={isAuthenticated ? "MainTabs" : "Login"}
+      initialRouteName={isAuthenticated ? "MainTabs" : "GetStarted"}
     >
       {isAuthenticated ? (
         <>
@@ -130,6 +132,8 @@ const AppStack = () => {
         </>
       ) : (
         <>
+          <Stack.Screen name="GetStarted" component={GetStartedScreen} />
+          <Stack.Screen name="SignUp" component={SignUpScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
         </>
       )}

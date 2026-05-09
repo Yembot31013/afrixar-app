@@ -1,36 +1,33 @@
 {
-  "name": "afrixar-app",
-  "slug": "afrixar",
-  "scheme": "afrixar-app",
+  "name": "Konnect",
+  "slug": "konnect",
+  "scheme": "konnect",
   "version": "1.0.0",
   "orientation": "portrait",
   "userInterfaceStyle": "automatic",
-  "icon": "./assets/images/app-icon-all.png",
+  "icon": "./assets/images/brand/adaptive-icon.png",
   "updates": {
     "fallbackToCacheTimeout": 0
   },
-  "newArchEnabled": true,
-  "jsEngine": "hermes",
   "assetBundlePatterns": [
     "**/*"
   ],
   "android": {
-    "icon": "./assets/images/app-icon-android-legacy.png",
-    "package": "com.afrixarapp",
+    "icon": "./assets/images/brand/adaptive-icon.png",
+    "package": "com.konnectapp",
     "adaptiveIcon": {
-      "foregroundImage": "./assets/images/app-icon-android-adaptive-foreground.png",
-      "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
+      "foregroundImage": "./assets/images/brand/adaptive-icon.png",
+      "backgroundColor": "#ffffff"
     },
-    "allowBackup": false,
-    "edgeToEdgeEnabled": true
+    "allowBackup": false
   },
   "ios": {
-    "icon": "./assets/images/app-icon-ios.png",
+    "icon": "./assets/images/brand/ios-icon.png",
     "supportsTablet": true,
-    "bundleIdentifier": "com.afrixarapp"
+    "bundleIdentifier": "com.konnectapp"
   },
   "web": {
-    "favicon": "./assets/images/app-icon-web-favicon.png",
+    "favicon": "./assets/images/brand/adaptive-icon.png",
     "bundler": "metro"
   },
   "plugins": [
@@ -39,10 +36,10 @@
     [
       "expo-splash-screen",
       {
-        "image": "./assets/images/app-icon-android-adaptive-foreground.png",
+        "image": "./assets/images/brand/splash-icon.png",
         "imageWidth": 300,
         "resizeMode": "contain",
-        "backgroundColor": "#191015"
+        "backgroundColor": "#ffffff"
       }
     ],
     [
@@ -52,6 +49,12 @@
           "parentTheme": "Light",
           "enforceNavigationBarContrast": false
         }
+      }
+    ],
+    [
+      "expo-location",
+      {
+        "locationAlwaysAndWhenInUsePermission": "Allow Konnect to use your location to find nearby tasks and talent."
       }
     ],
     "expo-build-properties"
@@ -64,7 +67,7 @@
       "version": "11.5.0"
     },
     "eas": {
-      "projectId": "ea8b22ff-b57d-4e32-b0f8-9ca295dfb49f"
+      "projectId": "1a620cf1-0211-4a46-8ba5-ff45d6edbdab"
     }
   },
   "owner": "yembot"

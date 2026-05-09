@@ -12,11 +12,13 @@ import type { AppStackScreenProps } from "@/navigators/navigationTypes"
 import { useAppTheme } from "@/theme/context"
 import type { ThemedStyle } from "@/theme/types"
 
-interface LoginScreenProps extends AppStackScreenProps<"Login"> {}
+interface SignUpScreenProps extends AppStackScreenProps<"SignUp"> {}
 
-export const LoginScreen: FC<LoginScreenProps> = ({ navigation }) => {
+export const SignUpScreen: FC<SignUpScreenProps> = ({ navigation }) => {
+  const authEmailInput = useRef<TextInput>(null)
   const authPasswordInput = useRef<TextInput>(null)
 
+  const [authName, setAuthName] = useState("")
   const [authEmail, setAuthEmail] = useState("")
   const [authPassword, setAuthPassword] = useState("")
   const [isAuthPasswordHidden, setIsAuthPasswordHidden] = useState(true)
@@ -28,9 +30,9 @@ export const LoginScreen: FC<LoginScreenProps> = ({ navigation }) => {
     theme: { colors },
   } = useAppTheme()
 
-  function login() {
+  function signUp() {
     setIsSubmitted(true)
-    if (!authEmail || !authPassword) return
+    if (!authName || !authEmail || !authPassword) return
 
     setIsSubmitted(false)
     // Mock login with fake token
@@ -66,12 +68,25 @@ export const LoginScreen: FC<LoginScreenProps> = ({ navigation }) => {
 
       <View style={themed($screenContentContainer)}>
         <Animated.View entering={FadeInDown.delay(100).springify()}>
-          <Text text="Welcome Back" preset="heading" style={themed($heading)} />
-          <Text text="Log in to continue finding opportunities." preset="subheading" style={themed($subheading)} />
+          <Text text="Create Account" preset="heading" style={themed($heading)} />
+          <Text text="Join Konnect and discover your next opportunity." preset="subheading" style={themed($subheading)} />
         </Animated.View>
 
         <Animated.View entering={FadeInDown.delay(200).springify()}>
           <TextField
+            value={authName}
+            onChangeText={setAuthName}
+            containerStyle={themed($textField)}
+            autoCapitalize="words"
+            autoComplete="name"
+            autoCorrect={false}
+            label="Full Name"
+            placeholder="John Doe"
+            onSubmitEditing={() => authEmailInput.current?.focus()}
+          />
+
+          <TextField
+            ref={authEmailInput}
             value={authEmail}
             onChangeText={setAuthEmail}
             containerStyle={themed($textField)}
@@ -94,28 +109,28 @@ export const LoginScreen: FC<LoginScreenProps> = ({ navigation }) => {
             autoCorrect={false}
             secureTextEntry={isAuthPasswordHidden}
             label="Password"
-            placeholder="Enter your password"
-            onSubmitEditing={login}
+            placeholder="Create a strong password"
+            onSubmitEditing={signUp}
             RightAccessory={PasswordRightAccessory}
           />
 
           <Button
-            testID="login-button"
-            text="Log In"
+            testID="signup-button"
+            text="Create Account"
             style={themed($tapButton)}
             preset="reversed"
-            onPress={login}
+            onPress={signUp}
           />
         </Animated.View>
 
         <Animated.View entering={FadeInDown.delay(300).springify()} style={themed($footer)}>
-          <Text text="Don't have an account?" size="sm" style={themed($footerText)} />
+          <Text text="Already have an account?" size="sm" style={themed($footerText)} />
           <Button
             preset="default"
-            text="Sign Up"
-            style={themed($signupLink)}
-            textStyle={themed($signupLinkText)}
-            onPress={() => navigation.navigate("SignUp")}
+            text="Log In"
+            style={themed($loginLink)}
+            textStyle={themed($loginLinkText)}
+            onPress={() => navigation.navigate("Login")}
           />
         </Animated.View>
       </View>
@@ -176,7 +191,7 @@ const $footerText: ThemedStyle<TextStyle> = ({ colors }) => ({
   color: colors.textDim,
 })
 
-const $signupLink: ThemedStyle<ViewStyle> = () => ({
+const $loginLink: ThemedStyle<ViewStyle> = () => ({
   minHeight: 0,
   paddingHorizontal: 0,
   paddingVertical: 0,
@@ -184,7 +199,7 @@ const $signupLink: ThemedStyle<ViewStyle> = () => ({
   borderWidth: 0,
 })
 
-const $signupLinkText: ThemedStyle<TextStyle> = ({ colors }) => ({
+const $loginLinkText: ThemedStyle<TextStyle> = ({ colors }) => ({
   color: colors.palette.primary500,
   fontWeight: "bold",
 })

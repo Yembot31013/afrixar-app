@@ -40,10 +40,10 @@ export function MainTabNavigator() {
         options={{
           tabBarLabel: "Discover",
           tabBarIcon: ({ focused }) => (
-            <Icon
-              icon="pin"
-              color={focused ? colors.palette.primary500 : colors.textDim}
+            <Ionicons
+              name={focused ? "compass" : "compass-outline"}
               size={24}
+              color={focused ? colors.palette.primary500 : colors.textDim}
             />
           ),
         }}
@@ -52,10 +52,10 @@ export function MainTabNavigator() {
         name="MyWork"
         component={MyWorkScreen}
         options={{
-          tabBarLabel: "Pipeline",
+          tabBarLabel: "My Tasks",
           tabBarIcon: ({ focused }) => (
             <Ionicons
-              name={focused ? "layers" : "layers-outline"}
+              name={focused ? "briefcase" : "briefcase-outline"}
               size={24}
               color={focused ? colors.palette.primary500 : colors.textDim}
             />
@@ -70,7 +70,7 @@ export function MainTabNavigator() {
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <Ionicons
-              name={focused ? "chatbubbles" : "chatbubbles-outline"}
+              name={focused ? "chatbubble-ellipses" : "chatbubble-ellipses-outline"}
               size={24}
               color={focused ? colors.palette.primary500 : colors.textDim}
             />
@@ -83,10 +83,10 @@ export function MainTabNavigator() {
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ focused }) => (
-            <Icon
-              icon="settings"
-              color={focused ? colors.palette.primary500 : colors.textDim}
+            <Ionicons
+              name={focused ? "person" : "person-outline"}
               size={24}
+              color={focused ? colors.palette.primary500 : colors.textDim}
             />
           ),
         }}

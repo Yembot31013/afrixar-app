@@ -131,7 +131,7 @@ export const DiscoverFiltersModal: FC<Props> = function DiscoverFiltersModal({
           >
             <Ionicons name="close" size={28} color={colors.text} />
           </Pressable>
-          <Text text="Match preferences" preset="heading" style={themed($headerTitle)} />
+          <Text text="Match preferences" preset="heading" size="xl" style={themed($headerTitle)} />
           <Pressable onPress={reset} hitSlop={12}>
             <Text text="Reset" size="sm" weight="semiBold" style={themed($resetBtn)} />
           </Pressable>
@@ -143,7 +143,7 @@ export const DiscoverFiltersModal: FC<Props> = function DiscoverFiltersModal({
           showsVerticalScrollIndicator={false}
         >
           <Text
-            text="Fine-tune what appears in your deck. Afrixar will rank nearby opportunities that fit — you can change this anytime."
+            text="Fine-tune what appears in your deck. Konnect will rank nearby opportunities that fit — you can change this anytime."
             size="sm"
             style={themed($intro)}
           />
@@ -308,7 +308,7 @@ export const DiscoverFiltersModal: FC<Props> = function DiscoverFiltersModal({
             <View style={themed($toggleText)}>
               <Text text="Verified listings only" weight="semiBold" size="sm" />
               <Text
-                text="IDs and businesses checked by Afrixar — fewer surprises."
+                text="IDs and businesses checked by Konnect — fewer surprises."
                 size="xxs"
                 style={themed($hint)}
               />
@@ -323,7 +323,7 @@ export const DiscoverFiltersModal: FC<Props> = function DiscoverFiltersModal({
             </View>
           </Pressable>
 
-          <Text text="Afrixar Priority" preset="formLabel" style={themed($sectionLabel)} />
+          <Text text="Konnect Priority" preset="formLabel" style={themed($sectionLabel)} />
           <Text
             text="Premium filters stay optional — preview what unlocks with Priority."
             size="xxs"
@@ -335,7 +335,7 @@ export const DiscoverFiltersModal: FC<Props> = function DiscoverFiltersModal({
               style={themed($premiumLockedRow)}
               onPress={() =>
                 Alert.alert(
-                  "Afrixar Priority",
+                  "Konnect Priority",
                   "Radius boost, invite priority, and verified lift ship with subscription pricing — launching soon.",
                 )
               }

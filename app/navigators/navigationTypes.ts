@@ -26,6 +26,8 @@ export type MainTabParamList = {
 }
 
 export type AppStackParamList = {
+  GetStarted: undefined
+  SignUp: undefined
   Login: undefined
   MainTabs: NavigatorScreenParams<MainTabParamList>
   Wallet: undefined

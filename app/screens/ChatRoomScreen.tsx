@@ -25,7 +25,7 @@ import type { ThemedStyle } from "@/theme/types"
 
 interface ChatRoomScreenProps extends ChatStackScreenProps<"ChatRoom"> {}
 
-export const ChatRoomScreen: FC<ChatRoomScreenProps> = function ChatRoomScreen({ route }) {
+export const ChatRoomScreen: FC<ChatRoomScreenProps> = function ChatRoomScreen({ route, navigation }) {
   const { conversationId } = route.params
   const {
     themed,
@@ -52,6 +52,17 @@ export const ChatRoomScreen: FC<ChatRoomScreenProps> = function ChatRoomScreen({
       h.remove()
     }
   }, [])
+
+  useEffect(() => {
+    navigation.getParent()?.setOptions({
+      tabBarStyle: { display: "none" },
+    })
+    return () => {
+      navigation.getParent()?.setOptions({
+        tabBarStyle: { display: "flex" },
+      })
+    }
+  }, [navigation])
 
   const canSend = draft.trim().length > 0
 

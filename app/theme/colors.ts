@@ -1,45 +1,45 @@
 /**
- * Afrixar brand tokens — aligned with `afrixar-interview/app/globals.css`
- * Background #FAF7EE · Surface #FFFEFB · Foreground #020103 · Accent #EB9A4B
+ * Konnect brand tokens — aligned with `afrixar-interview/app/globals.css`
+ * Background #F8FAF9 · Surface #FFFFFF · Foreground #0A1F16 · Accent #008751
  */
 const palette = {
-  neutral100: "#FFFEFB",
-  neutral200: "#FAF7EE",
-  neutral300: "#F0E9DC",
-  neutral400: "#E8E1D4",
-  neutral500: "#C9C2B6",
-  neutral600: "#8A847A",
-  neutral700: "#6B6560",
-  neutral800: "#4A4540",
-  neutral900: "#020103",
+  neutral100: "#FFFFFF",
+  neutral200: "#F8FAF9",
+  neutral300: "#E8EDEB",
+  neutral400: "#D1D9D6",
+  neutral500: "#A8B5AF",
+  neutral600: "#7A8A83",
+  neutral700: "#5C6B64",
+  neutral800: "#3D4D45",
+  neutral900: "#111111",
 
-  primary100: "#FCEBD9",
-  primary200: "#F5D4B8",
-  primary300: "#EB9A4B",
-  primary400: "#D4823A",
-  primary500: "#B56514",
-  primary600: "#8A4E10",
+  primary100: "#FFE6E6",
+  primary200: "#FFB3B3",
+  primary300: "#FF8080",
+  primary400: "#FF4D4D",
+  primary500: "#E52026",
+  primary600: "#B3171D",
 
-  secondary100: "#EEF6F5",
-  secondary200: "#D5EBE8",
-  secondary300: "#9CC9C4",
-  secondary400: "#5FA89F",
-  secondary500: "#2F7D73",
+  secondary100: "#E6F4EA",
+  secondary200: "#B3DFBD",
+  secondary300: "#80C991",
+  secondary400: "#4DB464",
+  secondary500: "#008C3A",
 
-  accent100: "#FFF4E8",
-  accent200: "#FFE8CC",
-  accent300: "#FFD699",
-  accent400: "#FFC266",
-  accent500: "#EB9A4B",
+  accent100: "#E6FFFA",
+  accent200: "#B2F5EA",
+  accent300: "#81E6D9",
+  accent400: "#4FD1C5",
+  accent500: "#38B2AC",
 
   angry100: "#FFE8E5",
   angry500: "#C03403",
 
-  success100: "#E8F6EE",
-  success500: "#1D7A4C",
+  success100: "#E1F5EC",
+  success500: "#008751",
 
-  overlay20: "rgba(2, 1, 3, 0.06)",
-  overlay50: "rgba(2, 1, 3, 0.12)",
+  overlay20: "rgba(10, 31, 22, 0.06)",
+  overlay50: "rgba(10, 31, 22, 0.12)",
 } as const
 
 export const colors = {
@@ -49,7 +49,7 @@ export const colors = {
   textDim: palette.neutral800,
   background: palette.neutral200,
   border: palette.neutral400,
-  tint: palette.primary300,
+  tint: palette.primary500,
   tintInactive: palette.neutral500,
   separator: palette.neutral300,
   error: palette.angry500,
